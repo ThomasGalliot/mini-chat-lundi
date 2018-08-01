@@ -22,26 +22,15 @@
         <!-- Affichage de chaque message (toutes les données sont protégées par htmlspecialchars) -->
         <section class="row mb-5 my-5">
             <div class="col-12" id="messages">
-                <div class="col-12" id="messages-container">
-                    <div class="card mb-0 message">
-                        <div class="card-body">
-                            <p class="my-0">
-                                <strong>
-                                    ExemplePseudo
-                                </strong>
-                                : ExempleMessage
-                                <span class="badge badge-secondary float-right created_at">2018-01-01 00:00:00</span>
-                            </p>
-                        </div>
-                    </div>
-                </div>
+                <?php include('pdo/post.php'); ?>
             </div>
         </section>
+        
     </div>
 </main>
 
 <div id="talkBar" class="bg-primary">
-    <form action="pdo/store.php" method="post">
+    <form action="pdo/store.php" method="post" onsubmit="storMessage(event, this)">
         <div class="input-group">
             <input type="text"
                    id="pseudo"
@@ -49,6 +38,7 @@
                    name="pseudo"
                    placeholder="Pseudo"
                    minlength="2"
+                   value="<?= isset($_COOKIE['pseudo']) ? $_COOKIE['pseudo'] : " " ; ?>"
                    required>
             <input type="text"
                    id="message"
@@ -58,7 +48,7 @@
                    minlength="1"
                    maxlength="255"
                    required>
-            <button type="submit" class="btn btn-success col-2">Envoyer</button>
+            <button type="submit" class="btn btn-success col-2" id="btnEnvoyerChat">Envoyer</button>
         </div>
     </form>
 </div>
