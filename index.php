@@ -30,7 +30,7 @@
 </main>
 
 <div id="talkBar" class="bg-primary">
-    <form action="pdo/store.php" method="post" onsubmit="storMessage(event, this)">
+    <form action="pdo/store.php" method="post" onsubmit="storeMessage(event, this)">
         <div class="input-group">
             <input type="text"
                    id="pseudo"
