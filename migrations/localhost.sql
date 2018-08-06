@@ -2,10 +2,10 @@
 -- version 4.8.2
 -- https://www.phpmyadmin.net/
 --
--- Host: localhost
--- Generation Time: Aug 06, 2018 at 12:28 PM
--- Server version: 10.1.34-MariaDB
--- PHP Version: 7.2.7
+-- Hôte : localhost
+-- Généré le :  lun. 06 août 2018 à 13:49
+-- Version du serveur :  10.1.34-MariaDB
+-- Version de PHP :  7.2.7
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -19,13 +19,15 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `mini_chat_thomas`
+-- Base de données :  `mini_chat_thomas`
 --
+CREATE DATABASE IF NOT EXISTS `mini_chat_thomas` DEFAULT CHARACTER SET latin1 COLLATE latin1_swedish_ci;
+USE `mini_chat_thomas`;
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `messages`
+-- Structure de la table `messages`
 --
 
 CREATE TABLE `messages` (
@@ -38,7 +40,7 @@ CREATE TABLE `messages` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `messages`
+-- Déchargement des données de la table `messages`
 --
 
 INSERT INTO `messages` (`id`, `pseudo`, `message`, `ip`, `user_agent`, `date`) VALUES
@@ -105,7 +107,7 @@ INSERT INTO `messages` (`id`, `pseudo`, `message`, `ip`, `user_agent`, `date`) V
 -- --------------------------------------------------------
 
 --
--- Table structure for table `users`
+-- Structure de la table `users`
 --
 
 CREATE TABLE `users` (
@@ -114,7 +116,7 @@ CREATE TABLE `users` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `users`
+-- Déchargement des données de la table `users`
 --
 
 INSERT INTO `users` (`pseudo`, `color`) VALUES
@@ -132,27 +134,27 @@ INSERT INTO `users` (`pseudo`, `color`) VALUES
 ('zydhgfsqthg', '#ea02ea');
 
 --
--- Indexes for dumped tables
+-- Index pour les tables déchargées
 --
 
 --
--- Indexes for table `messages`
+-- Index pour la table `messages`
 --
 ALTER TABLE `messages`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `users`
+-- Index pour la table `users`
 --
 ALTER TABLE `users`
   ADD PRIMARY KEY (`pseudo`);
 
 --
--- AUTO_INCREMENT for dumped tables
+-- AUTO_INCREMENT pour les tables déchargées
 --
 
 --
--- AUTO_INCREMENT for table `messages`
+-- AUTO_INCREMENT pour la table `messages`
 --
 ALTER TABLE `messages`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=60;
